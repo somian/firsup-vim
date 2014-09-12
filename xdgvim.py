@@ -162,6 +162,7 @@ if len(jaa) == 1 and jaa[0] != vim_tells_us()[0]:
   print >> stderr, ('runtime dirs modified in ENV: %-34s\n' % lur())
 
 runtl = reduce(_reduce_funct_, itertools.chain(unhom,vtell), '/usr/share/vim')
-sys.stdout.write( 'System List of Dirs: ' + runtl +"\n")
+sys.stderr.write( 'System List of Dirs: ' + runtl +"\n")
 # Now find the vim directory under own()
-sys.stdout.write( "\n" + 'VIMRUNTIME including xdg-style user dir: ' + os.pathsep.join( [parf, own(''), runtl ]) + "\n")
+sys.stderr.write( "\n" + 'VIMRUNTIME including xdg-style user dir: ')
+sys.stdout.write( os.pathsep.join( [parf, own(''), runtl ]) + "\n")
